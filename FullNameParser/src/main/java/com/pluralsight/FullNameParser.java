@@ -12,6 +12,7 @@ public class FullNameParser {
         String firstName = "";
         String midName = "";
         String lastName = "";
+        // namePart splits fullName by spaces
         String[] namePart = fullName.split(Pattern.quote(" "));
 
         //CALCULATIONS
@@ -26,16 +27,23 @@ public class FullNameParser {
             midName = namePart [1];
             lastName = namePart [2];
         }
+
+        // Output print
         System.out.println("First Name: " + firstName);
+
+        // For middle name if it is blank
         if (midName.isBlank()) {
             System.out.println("Middle Name: (none)");
         }
         else {
             System.out.println("Middle Name: " + midName);
         }
+
         System.out.println("Last Name: " + lastName);
 
     }
+
+    // Methods
     public static String promptForString(String prompt){
         System.out.print(prompt);
         return scanner.nextLine().trim();
