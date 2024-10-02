@@ -27,7 +27,12 @@ public class FullNameParser {
             lastName = namePart [2];
         }
         System.out.println("First Name: " + firstName);
-        System.out.println("Middle Name: " + midName);
+        if (midName.isBlank()) {
+            System.out.println("Middle Name: (none)");
+        }
+        else {
+            System.out.println("Middle Name: " + midName);
+        }
         System.out.println("Last Name: " + lastName);
 
     }
