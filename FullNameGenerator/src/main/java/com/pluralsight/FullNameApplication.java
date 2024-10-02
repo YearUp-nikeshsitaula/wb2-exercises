@@ -1,7 +1,8 @@
 package com.pluralsight;
-import java.util.*;
 
-public class Main {
+import java.util.Scanner;
+
+public class FullNameApplication {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
 
@@ -15,22 +16,24 @@ public class Main {
 
         //Calculations
 
-        if(midName.isBlank()) {
-            if (suffix.isBlank()) {
-                fullName = (firstName + " " + lastName);
-            }
-            else{
-                fullName = (firstName + " " + lastName + " " + suffix);
-            }
+        if (firstName.isBlank()) {
+            System.out.println("Please give your first name!");
         }
-        else{
-            if (suffix.isBlank()) {
-                fullName = firstName + " " + midName + " " + lastName;
-            }
-            else {
-                fullName = firstName + " " + midName + " " + lastName + " " + suffix;
-            }
+
+        if (midName.isBlank()){
+            midName = " ";
+        } else {
+            midName = " " + midName + " ";
         }
+
+        // If suffix is NOT blank = !suffix
+        if(!suffix.isBlank()){
+            suffix = ", " + suffix;
+        }
+
+        fullName = firstName + midName + lastName + suffix;
+        System.out.println("Full name = " + fullName);
+
     }
 
 
